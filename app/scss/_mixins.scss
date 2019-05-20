@@ -1,0 +1,46 @@
+@mixin posAbsCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @content;
+}
+
+@mixin blockCenter() {
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin mq($break) {
+    $value: map-get($breakpoints, $break);
+    //$sm: map-get($breakpoints, 'sm');
+
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
+
+@mixin mq-max($break) {
+    $value: map-get($breakpoints, $break);
+
+    @media screen and (max-width: $value) {
+        @content;
+    }
+
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin flexBox($dir, $just: null, $align: null) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+    @content;
+}

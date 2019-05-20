@@ -1,0 +1,67 @@
+.envelope {
+  position: relative;
+  margin: 50px auto 0;
+  width: 98px;
+  height: 66px;
+  background: $darkPink;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 1px $darkPink inset;
+}
+.envelope:before,
+.envelope:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-width: 33px 49px;
+}
+.envelope:before {
+  border-bottom-color: $darkPink;
+  top: -100%;
+  left: 0px;
+}
+.envelope:after {
+  border-right-color: $medPink;
+  border-left-color: $lightPink;
+  border-bottom-color: $lightPink;
+  top: 0;
+  border-radius: 0 0 5px 5px;
+  transform: rotate(360deg);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+
+.paper {
+  background: #fff;
+  width: 87px;
+  height: 66px;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: absolute;
+  left: 6px;
+  top: -33px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #ccc;
+}
+.paper:before,
+.paper:after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  background: #e3f1fc;
+  height: 4px;
+  border-radius: 5px;
+}
+.paper:before {
+  top: 14px;
+  width: 31px;
+}
+.paper:after {
+  right: 12px;
+  top: 28px;
+  box-shadow:
+    0 8px 0 #e3f1fc,
+    0 16px 0 #e3f1fc,
+    0 24px 0 #e3f1fc,
+    0 40px 0 #e3f1fc;
+}
